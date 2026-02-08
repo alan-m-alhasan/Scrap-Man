@@ -263,7 +263,13 @@ def main():
     # else:
     #     updater.start_polling()
 
-    updater.start_polling()
+    updater.start_webhook(
+    listen="0.0.0.0",
+    port=int(os.environ.get("PORT", 8080)),
+    url_path=Config.TG_BOT_TOKEN
+    )
+    updater.bot.set_webhook(url=os.environ.get("URL", "https://example.com") + Config.TG_BOT_TOKEN)
+
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
     # SIGTERM or SIGABRT. This should be used most of the time, since
