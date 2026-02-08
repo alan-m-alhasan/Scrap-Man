@@ -42,12 +42,13 @@ from helper_funcs.helper_steps import (
     compareFiles
 )
 
-WEBHOOK = bool(os.environ.get("WEBHOOK", False))
-if WEBHOOK:
-    from sample_config import Config
-else:
-    from config import Development as Config
+# WEBHOOK = bool(os.environ.get("WEBHOOK", False))
+# if WEBHOOK:
+#     from sample_config import Config
+# else:
+#     from config import Development as Config
 
+from sample_config import Config
 
 # Enable logging
 logging.basicConfig(
