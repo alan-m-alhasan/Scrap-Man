@@ -252,16 +252,18 @@ def main():
     tg_bot_dis_patcher.add_error_handler(error)
 
     # Start the Bot
-    if WEBHOOK:
-        updater.start_webhook(
-            listen="0.0.0.0",
-            port=Config.PORT,
-            url_path=Config.TG_BOT_TOKEN
-        )
-        # https://t.me/MarieOT/22915
-        updater.bot.set_webhook(url=Config.URL + Config.TG_BOT_TOKEN)
-    else:
-        updater.start_polling()
+    # if WEBHOOK:
+    #     updater.start_webhook(
+    #         listen="0.0.0.0",
+    #         port=Config.PORT,
+    #         url_path=Config.TG_BOT_TOKEN
+    #     )
+    #     # https://t.me/MarieOT/22915
+    #     updater.bot.set_webhook(url=Config.URL + Config.TG_BOT_TOKEN)
+    # else:
+    #     updater.start_polling()
+
+    updater.start_polling()
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
     # SIGTERM or SIGABRT. This should be used most of the time, since
